@@ -1,30 +1,30 @@
 # SwiftDataManager
 
-SwiftDataManager est une librairie générique facilitant la gestion des objets persistants avec **SwiftData**. Il offre une interface simple pour **ajouter, récupérer, mettre à jour et supprimer** des objets tout en intégrant un mode **debug** optionnel.
+SwiftDataManager is a generic library that simplifies the management of persistent objects with **SwiftData**. It provides an easy-to-use interface for **adding, retrieving, updating, and deleting** objects while integrating an optional **debug mode**.
 
 ## 📦 Installation
 
-### Avec Swift Package Manager (SPM)
-Ajoutez SwiftDataManager à votre projet en utilisant **Swift Package Manager** :
+### Using Swift Package Manager (SPM)
+Add SwiftDataManager to your project using **Swift Package Manager**:
 
-1. Ouvrez votre projet Xcode.
-2. Allez dans **File > Add Packages...**.
-3. Entrez l'URL du repository GitHub :
+1. Open your Xcode project.
+2. Go to **File > Add Packages...**.
+3. Enter the GitHub repository URL:
    ```
    https://github.com/Numero333/SwiftDataManager.git
    ```
-4. Ajoutez le package à votre projet.
+4. Add the package to your project.
 
-## 🚀 Utilisation
+## 🚀 Usage
 
-### **1️⃣ Importation**
-Avant d'utiliser le gestionnaire de données, importez simplement la librairie :
+### **1️⃣ Importing**
+Before using the data manager, simply import the library:
 
 ```swift
 import SwiftDataManager
 ```
 
-### **2️⃣ Définition d'un Modèle**
+### **2️⃣ Defining a Model**
 
 ```swift
 import SwiftData
@@ -43,35 +43,35 @@ class User {
 }
 ```
 
-### **3️⃣ Initialisation du DataManager**
+### **3️⃣ Initializing the DataManager**
 
 ```swift
-let dataManager = try SwiftDataManager<User>(debugMode: true) // Mode debug activé
+let dataManager = try SwiftDataManager<User>(debugMode: true) // Debug mode enabled
 ```
 
-### **4️⃣ Ajout d'un Objet**
+### **4️⃣ Adding an Object**
 
 ```swift
 let newUser = User(name: "Alice", age: 25)
 try dataManager.addItem(newUser)
 ```
 
-### **5️⃣ Récupération des Objets**
+### **5️⃣ Retrieving Objects**
 
 ```swift
 let users = try dataManager.fetchItems()
 ```
 
-### **6️⃣ Récupération d'un Objet avec un Prédicat**
+### **6️⃣ Retrieving an Object with a Predicate**
 
 ```swift
 let predicate = #Predicate<User> { $0.name == "Alice" }
 if let user = try dataManager.fetchItem(predicate: predicate) {
-    print("Utilisateur trouvé : \(user.name)")
+    print("User found: \(user.name)")
 }
 ```
 
-### **7️⃣ Mise à Jour d'un Objet**
+### **7️⃣ Updating an Object**
 
 ```swift
 if let user = try dataManager.fetchItem(predicate: predicate) {
@@ -79,7 +79,7 @@ if let user = try dataManager.fetchItem(predicate: predicate) {
 }
 ```
 
-### **8️⃣ Suppression d'un Objet**
+### **8️⃣ Deleting an Object**
 
 ```swift
 if let user = try dataManager.fetchItem(predicate: predicate) {
@@ -87,26 +87,26 @@ if let user = try dataManager.fetchItem(predicate: predicate) {
 }
 ```
 
-## 🛠 Mode Debug
-Le mode **debug** permet d'afficher des logs détaillés lors des opérations CRUD. Il est désactivé par défaut.
+## 🛠 Debug Mode
+The **debug mode** allows detailed logging of CRUD operations. It is disabled by default.
 
-- **Activer le mode debug :**
+- **Enable debug mode:**
   ```swift
   let dataManager = try SwiftDataManager<User>(debugMode: true)
   ```
-- **Désactiver le mode debug :**
+- **Disable debug mode:**
   ```swift
   let dataManager = try SwiftDataManager<User>()
   ```
 
-## 🏆 Avantages
-✅ Simple d'utilisation<br>
-✅ Basé sur **SwiftData**<br>
-✅ Supporte les **prédicats et tris**<br>
-✅ Mode debug activable<br>
-✅ Compatible avec Swift Package Manager
+## 🏆 Benefits
+✅ Easy to use<br>
+✅ Based on **SwiftData**<br>
+✅ Supports **predicates and sorting**<br>
+✅ Activatable debug mode<br>
+✅ Compatible with Swift Package Manager
 
-## 📄 Licence
+## 📄 License
 MIT License
 
 Copyright (c) 2025 Numero333
@@ -131,4 +131,5 @@ SOFTWARE.
 
 ---
 
-🎯 **Développé avec ❤️ par Numero333**
+🎯 **Developed with ❤️ by Numero333**
+
