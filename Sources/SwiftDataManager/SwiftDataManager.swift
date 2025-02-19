@@ -24,7 +24,7 @@ public class SwiftDataManager<T: PersistentModel>: SwiftDataManagerProtocol {
     let modelContext: ModelContext
     private(set) var isDebugModeEnabled: Bool
     
-    init(debugMode: Bool = false) throws {
+    public init(debugMode: Bool = false) throws {
         self.isDebugModeEnabled = debugMode
         do {
             self.modelContainer = try ModelContainer(for: T.self)
